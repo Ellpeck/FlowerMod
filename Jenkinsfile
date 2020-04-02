@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh './gradlew clean --no-daemon'
         sh './gradlew build --no-daemon'
+        sh 'chmod +x ./gradlew'
       }
     }
 
@@ -13,5 +14,6 @@ pipeline {
         archiveArtifacts 'build/libs/**.jar'
       }
     }
+
   }
 }
